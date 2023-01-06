@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+body {margin:0;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(255, 255, 255);
+}
+
+.active {
+  background-color: #042baa;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+
+.buttonUp {
+  background-color: #3643f4;
+  float: left;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #3643f4;
+}
+
+.container {
+  padding-right: 15%;
+  padding-left: 15%;
+  padding-bottom: 30%;
+  padding-top: 2px;
+}
+
+span.name {
+  float: right;
+}
+
+span.email {
+  float: right;
+}
+
+span.detail {
+  display: block; 
+  height: 190px;
+  font-size: 2em;
+}
+
+
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.center{
+
+    padding-left: 30%;
+    font-size: 500%;
+    margin-top: 150px;
+}
+</style>
+
+</head>
+<body>
+
+    <div class = "center">Contact Us</div>
+    <div class="container">
+      <label for="uname"><b>What can we help you with:</b></label>
+      <input type="text" placeholder="Enter Question" uname="uname" required>
+
+      <label for="name"><b>Your Name:</b></label>
+      <input type="text" placeholder="Enter your name" name="name" required>
+        
+      <label for="email"><b>Email Address:</b></label>
+      <input type="text" placeholder="Enter your email address" email="email" required>
+
+      <label for="detail"><b>Details:</b></label>
+      <input type="text" placeholder="Write your problem in detail here" detail="detail" required>
+
+
+           
+      <div>
+        <a href = >
+          <button class = "buttonUp" type = "submit">Submit</button>
+        </a>
+      
+    </div>
+    </div>
+    <ul>
+      <li><a href="./IntroductionPage.html">Home</a></li>
+      <li><a href="./NewsPage.html">News</a></li>
+      <li><a class="active" href="./ContactPage.html">Contact</a></li>
+      <li><a href="./AboutPage.html">About</a></li>
+    </ul>
+</body>
+</html>
