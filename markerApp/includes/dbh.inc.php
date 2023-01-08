@@ -5,7 +5,7 @@ echo "";
 $host="localhost";
 $dbUser="root";
 $dbPwd="";
-$dbName="loginsystem";
+$dbName="markerApp";
 
 $sqlConn = new mysqli($host, $dbUser, $dbPwd, $dbName);
                    

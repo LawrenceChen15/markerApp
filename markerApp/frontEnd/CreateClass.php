@@ -70,6 +70,12 @@ h1{
     display: inline-flex;
 }
 
+#div3{
+  padding-left: 10px;
+  display: flex;
+  font-size: 35px;
+}
+
 .numStudents{
     padding-left: 20px;
     font-size: 35px;
@@ -78,6 +84,11 @@ h1{
 .nameStudents{
     padding-left: 20px;
     font-size:30px;
+}
+
+.className{
+  margin-top: 15px;
+  width: 300px;
 }
 
 
@@ -90,15 +101,30 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
+.butSave{
+  height: 60px;
+  width: 120px;
+
+}
+
 label {
     display: inline;
 }
 
 </style>
 
-<h1>Create a Classroom</h1>
+<h1>Create a Classroom:
+</h1>
 
 <body>
+
+<div id = "div3"> <p class = "nameStudents">Class Name: </p> 
+
+<form action = "../includes/CreateClass.inc.php" class = "className" method = "POST">
+      <label for="className"></label>
+      <input type="text" name="nameClass">
+
+</div>
 
 <div id = "div1">
     <p class = "numStudents">Number of students: </p>
@@ -110,7 +136,7 @@ label {
     <button id="create">List</button>
 </div>
 
-<div>
+<!--<div>
     <p class = "nameStudents">Student names</p>
 
     <div>
@@ -121,7 +147,7 @@ function appendInputs(num){
         input = document.createElement('input'),
         tmp;
     num = typeof num == 'undefined' ?  parseInt(document.getElementById('number').value, 10) : num;
-    for (var i = 0; i < num; i++){
+    for (var i = 0; i < num*2; i++){
         tmp = input.cloneNode();
         tmp.id = 'input_' + (i+1);
         tmp.name = '';
@@ -145,7 +171,13 @@ document.getElementById('create').addEventListener('click', function(e){
 
 <div id="divSelections"></div>
 
+-->
+
+<div>
+<button class = "butSave" id = "saveClass" type = "submit">Save Class</button>
+</div>
 </body>
+</form>
 
 <ul>
       <li><a href="./IntroductionPage.html">Home</a></li>
