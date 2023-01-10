@@ -130,7 +130,7 @@ label {
 </div>
 
 <div>
-<form action = "" method = "POST">
+<form action = "../includes/CreateStudents.inc.php" method = "POST">
       <label for="nameFirst"><b>First Name</b></label>
       <input type="text" placeholder="First Name" name="firstName" >
 
@@ -181,9 +181,8 @@ document.getElementById('create').addEventListener('click', function(e){
 <div>
 <button class = "butStudents" id = "saveStudents" type = "submit">Save Student</button>
 </div>
-</body>
 </form>
-
+</body>
 <ul>
       <li><a href="./IntroductionPage.html">Home</a></li>
       <li><a href="./NewsPage.html">News</a></li>

@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
+</html>
 <?php
 $mysqlConn = require __DIR__ . "/dbh.inc.php";
 
@@ -28,7 +29,3 @@ if ($stmt->execute()) {
 }
 
 ?>
-
-</html>
-
-
