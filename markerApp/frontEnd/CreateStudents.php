@@ -112,74 +112,33 @@ label {
 <body>
 
 <div id = "div3">
-<form>
+<form action = "../includes/CreateStudents.inc.php" method = "POST">
       <label for="className"><b>Class Name:</b></label>
-      <select class = "dropDown" name = "classID">
-
+      <select class = "dropDown" name="classID">
       <?php 
     $conn = require $_SERVER['DOCUMENT_ROOT'] . "/markerApp/markerApp/includes/dbh.inc.php";
-    $sqlStatement = sprintf("SELECT className FROM class");
+    $sqlStatement = sprintf("SELECT className, classID FROM class");
     $result=$conn->query($sqlStatement);
 
     
     while ($row = $result->fetch_assoc()){
-    echo "<option value=>" . $row['className'] . "</option>";
+      $className = $row['className'];
+        $classID = $row['classID'];
+    echo "<option value=$classID>" . $className . "</option>";
     }
 ?>
 </select>
 </div>
 
-<div>
-<form action = "../includes/CreateStudents.inc.php" method = "POST">
+
       <label for="nameFirst"><b>First Name</b></label>
       <input type="text" placeholder="First Name" name="firstName" >
 
       <label for = "nameLast"><b>Last Name</b></label>
       <input type = "text" placeholder = "Last Name" name = "lastName" >
 
-</div>
-
-
-
-<!--<div>
-    <p class = "nameStudents">Student names</p>
-
-    <div>
-  <script>
-function appendInputs(num){
-    var target = document.getElementById('divSelections'),
-        form = document.createElement('form'),
-        input = document.createElement('input'),
-        tmp;
-    num = typeof num == 'undefined' ?  parseInt(document.getElementById('number').value, 10) : num;
-    for (var i = 0; i < num*2; i++){
-        tmp = input.cloneNode();
-        tmp.id = 'input_' + (i+1);
-        tmp.name = '';
-        tmp.type = 'text';
-        tmp.placeholder = tmp.id;
-        form.appendChild(tmp);
-    }
-    target.appendChild(form);
-}
-
-document.getElementById('create').addEventListener('click', function(e){
-    e.preventDefault();
-    appendInputs();
-});
-      
-  </script>
-
-    </div>
-
-</div>
-
-<div id="divSelections"></div>
-
--->
-
 <div>
-<button class = "butStudents" id = "saveStudents" type = "submit">Save Student</button>
+<button type = "submit">Save Student</button>
 </div>
 </form>
 </body>
