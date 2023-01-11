@@ -35,12 +35,12 @@ if (isset($_POST['submit'])){
     $myUser = $result->fetch_assoc();
 
     if($myUser) {
-        header("Location: /markerApp/frontEnd/Homepage.html");
+        header("Location: /markerApp/markerApp/frontEnd/Homepage.html");
         exit();
     }
     else{
         $_SESSION["access"]= false;
-        header("Location: /markerApp/frontEnd/signInPage.php");
+        header("Location: /markerApp/markerApp/frontEnd/signInPage.php");
         exit();
     }
 } else {
