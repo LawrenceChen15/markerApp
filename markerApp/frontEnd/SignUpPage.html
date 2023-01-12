@@ -3,20 +3,10 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+  /* Setting the font */
   body {font-family: 'Times New Roman', Times, serif, serif, Helvetica, sans-serif;}
 
   body {margin:0;}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100px;
-}
 
 li {
   float: left;
@@ -64,7 +54,6 @@ li a:hover:not(.active) {
   float: middle;
   align-content:center;
   overflow-wrap: break-word;
-
 }
 
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -101,6 +90,7 @@ button:hover {
   background-color: #3643f4;
 }
 
+/* Styling the text container */
 .container {
   padding-right: 175px;
   padding-left: 175px;
@@ -130,6 +120,7 @@ span.psw {
   cursor: pointer;
 }
 
+/* Styling the title */
 .center{
     padding-left: 175px;
     font-size: 40px;
@@ -139,12 +130,17 @@ span.psw {
 </style>
 
 </head>
-<body>
 
+<!-- Creating the Title text -->
+<body>
     <div class = "center">Sign-up here</div>
+
+    <!-- Creating the container for texts-->
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <!-- Creating the labels and buttons -->
 
       <label for = "uname2"><b>Password</b></label>
       <input type = "text" placeholder = "Enter Password" name = "psw" required>
@@ -155,7 +151,7 @@ span.psw {
       <a href = "./SignInPage.html">
         <button type = "submit">Sign Up</button>
         </a>
-        
+
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
