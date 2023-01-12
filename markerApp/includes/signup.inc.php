@@ -44,7 +44,7 @@ $stmt->bind_param("ss",
                   $_POST["pwd1"]);
                   
 if ($stmt->execute()) {
-    header("Location: /markerApp/frontEnd/signInPage.php");
+    header("Location: /markerApp/markerApp/frontEnd/signInPage.php");
     exit;
 } else {
     die($mysqlConn->error . " " . $mysqlConn->errno);

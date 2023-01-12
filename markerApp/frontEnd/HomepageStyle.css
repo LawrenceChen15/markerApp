@@ -1,13 +1,17 @@
+body {font-family: 'Times New Roman', Times, serif, serif, Helvetica, sans-serif;}
+
+body {margin:0;}
+
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  }
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+position: fixed;
+top: 0;
+width: 100%;
+}
   
   li {
   float: left;

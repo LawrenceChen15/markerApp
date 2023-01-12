@@ -2,46 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
+<link rel="stylesheet" href="Class.css">
 
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
 </head>
 <body>
 
@@ -52,23 +14,6 @@ body {
   <a href="#contact">Contact</a>
 </div>
 
-<style>
-  .body-center{
-  margin-left: 13%;
-}
-.grid-row {
-  display: flex;
-}
-
-.grid-cell {
-  width: 100px;
-  height: 70px;
-  border: 1px solid black;
-}
-
-</style>
-
-</style>
 <script>
 function dragstart_handler(ev) {
  console.log("dragStart");
@@ -130,5 +75,16 @@ function dragend_handler(ev) {
  </div>
 
 </body>
+  </body>
 </head>
+
+<div class = "divChange">
+<ul>
+    <li><a href="./HomePage.html">Home</a></li>
+    <li><a href="./SettingsPage.html">Settings</a></li>
+    <li><a href="./ContactPage.html">Contact</a></li>
+    <li><a href="./AboutPage.html">About</a></li>
+  </ul>
+</div>
+
 </html>

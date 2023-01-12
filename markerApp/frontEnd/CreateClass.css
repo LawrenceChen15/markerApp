@@ -1,0 +1,104 @@
+body {font-family: 'Times New Roman', Times, serif, serif, Helvetica, sans-serif;}
+
+body {margin:0;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(255, 255, 255);
+}
+
+.active {
+  background-color: #042baa;
+}
+
+
+/* Set a style for all buttons */
+
+.buttonUp {
+  background-color: #3643f4;
+  float: left;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+h1{
+    padding-top: 50px;
+    font-size: 60px;
+}
+
+#div1, #div2 {
+    display: inline-flex;
+}
+
+#div3{
+  padding-left: 10px;
+  display: flex;
+  font-size: 35px;
+}
+
+.numStudents{
+    padding-left: 20px;
+    font-size: 35px;
+}
+
+.nameStudents{
+    padding-left: 20px;
+    font-size:30px;
+}
+
+.className{
+  margin-top: 15px;
+  width: 300px;
+}
+
+
+input[type=text], input[type=password] {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.butSave{
+  height: 60px;
+  width: 120px;
+
+}
+
+label {
+    display: inline;
+}
+
