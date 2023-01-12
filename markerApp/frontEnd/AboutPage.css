@@ -1,9 +1,4 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-  }
-  
-  html {
+html {
     box-sizing: border-box;
   }
   
@@ -66,38 +61,6 @@ body {
       display: block;
     }
   }
-
-  body {font-family: 'Times New Roman', Times, serif, serif, Helvetica, sans-serif;}
-      
-        body {margin:0;}
-      
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        position: fixed;
-        top: 0;
-        width: 100%;
-      }
-      
-      li {
-        float: left;
-      }
-      
-      li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      
-      li a:hover:not(.active) {
-        background-color: #474e5d;
-    }
-      
           body { 
               background-image: url("./asset/ExamMarkImage.png");
               background-position-x: center;

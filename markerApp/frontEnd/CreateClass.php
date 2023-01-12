@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CreateClass.css">
+    <link rel = "stylesheet" href = "NavigationBar.css">
+
 </head>
 <h1>Create a Classroom:
 </h1>
@@ -73,10 +75,10 @@ document.getElementById('create').addEventListener('click', function(e){
 </form>
 
 <ul>
-      <li><a href="./IntroductionPage.html">Home</a></li>
-      <li><a href="./NewsPage.html">News</a></li>
-      <li><a class="active" href="./ContactPage.html">Contact</a></li>
-      <li><a href="./AboutPage.html">About</a></li>
+<li><a href="./HomePage.html">Home</a></li>
+  <li><a href="./SettingsPage.html">Settings</a></li>
+  <li><a href="./ContactPage.html">Contact</a></li>
+  <li><a href="./AboutPage.html">About</a></li>
     </ul>
 </html>
 
