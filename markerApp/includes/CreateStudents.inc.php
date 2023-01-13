@@ -53,7 +53,7 @@ $stmt->bind_param("ss",
                   $studentId);
                   
 if ($stmt->execute()) {
-    echo "Student is assiged to class";
+    header("Location: /markerApp/markerApp/frontEnd/CreateStudents.php");
     exit();
 } else {
     die($mysqlConn->error . " " . $mysqlConn->errno);

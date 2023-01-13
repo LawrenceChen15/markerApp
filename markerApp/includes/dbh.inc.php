@@ -1,5 +1,4 @@
 <?php
-echo "Connecting to mySQL ...";
 echo "";
 
 $host="localhost";

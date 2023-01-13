@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CreateClass.css">
-    <link rel = "stylesheet" href = "NavigationBar.css">
+    <link rel ="stylesheet" href = "NavigationBar.css">
 
 </head>
 <h1>Create a Classroom:
@@ -28,7 +28,7 @@
 <div id = "div2">
     <input id="number" type="number" value="1" min="0" step="1" max="100" />
     </label>
-    <button id="create">List</button>
+    <button id="create"> Submit</button>
 </div>
 
 <!--<div>
@@ -82,6 +82,4 @@ document.getElementById('create').addEventListener('click', function(e){
     </ul>
 </html>
 
-
-<style>
 

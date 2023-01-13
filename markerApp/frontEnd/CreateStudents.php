@@ -43,6 +43,11 @@
 <button type = "submit">Save Student</button>
 </div>
 </form>
+<div>
+<a href="Homepage.html">
+  <button>Go to other file</button>
+</a>
+</div>
 </body>
 <ul>
   <li><a href="./HomePage.html">Home</a></li>

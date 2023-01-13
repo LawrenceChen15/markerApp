@@ -1,6 +1,6 @@
   body { 
       background-image:url("https://previews.123rf.com/images/blamb/blamb1111/blamb111100034/11431473-a-cartoon-exam-with-an-excellent-mark-.jpg");             
-      background-position-x: 550px;
+      background-position-x: 90%;
       background-repeat: no-repeat;
       background-size: 550px;
       background-position-y: 75px;
@@ -8,8 +8,8 @@
   }
 
 .BIGBOX{
-   position: fixed; 
-   bottom: 350px;
+  position:absolute;
+  bottom: 350px;
    position: center;
    width: 100%;
    height: 500px;
@@ -19,36 +19,29 @@
    
 }
 
-.TEXTBOX{
-text-align:center;
-overflow-wrap: break-word;
-padding: 50px;
-position:center;
-
-}
 .button {
 border: none;
 color: white;
 background-color: #042baa;
 padding: 15px 32px;
 text-align: center;
-display: inline-block;
 font-size: 90px;
+position:absolute;
 cursor: pointer;
-position: absolute;
-position:relative;left:465px;
 position:relative;bottom:-80px;
 border-radius:10px;
+margin-left: 40%;
 }
+
 .centerText{
 padding-top:20px;
 text-align:center
 }
 
 .cursorPicture{
-margin-left: 50%;
-position:relative;right: 350px;
-position: relative;bottom: -160px;
+margin-left: 120%;
+position:absolute;
+margin-bottom: 100%;
 width: 150px;
 
 }
@@ -61,5 +54,6 @@ position:relative;top:200px;
 }
 
 .loginButton{
-margin-left: 120px;
+  position: absolute;
+  margin-left: 35%;
 }

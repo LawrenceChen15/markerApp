@@ -20,7 +20,7 @@ $stmt->bind_param("s",
                   $_POST["nameClass"]);
                   
 if ($stmt->execute()) {
-    echo "you created the class";
+    header("Location: /markerApp/markerApp/frontEnd/CreateStudents.php");
     exit;
 } else {
     die($mysqlConn->error . " " . $mysqlConn->errno);

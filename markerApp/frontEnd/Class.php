@@ -10,10 +10,22 @@
 <body>
 
 <div class="sidenav">
-  <a href="ForgetPasswordPage.html">About</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a>
+
+<div class = "classroomText"> Your Classroom
+</div>
+<?php 
+    $conn = require $_SERVER['DOCUMENT_ROOT'] . "/markerApp/markerApp/includes/dbh.inc.php";
+    $sqlStatement = sprintf("SELECT FirstName, LastName, ID FROM students");
+    $result=$conn->query($sqlStatement);
+
+    
+    while ($row = $result->fetch_assoc()){
+      $firstName = $row['FirstName'];
+      $lastName = $row['LastName'];
+      $studentID = $row['ID'];
+    echo "<a>" . $firstName. " " .$lastName. "</a>";
+    }
+?>
 </div>
 
 <script>
@@ -47,13 +59,30 @@ function dragend_handler(ev) {
   ev.dataTransfer.clearData();
 }
 </script>
-</head>
 
-<head>
+
+
 <body class = "body-center">
+<div id="gridContainer">
+  <div class="gridRow">
+    <div class="gridCell"><p>1-</p></div>
+    <div class="gridCell"><p>1</p></div>
+    <div class="gridCell"><p>1+</p></div>
+    <div class="gridCell"><p>2-</p></div>
+    <div class="gridCell"><p>2</p></div>
+    <div class="gridCell"><p>2+</p></div>
+    <div class="gridCell"><p>3-</p></div>
+    <div class="gridCell"><p>3</p></div>
+    <div class="gridCell"><p>3+</p></div>
+    <div class="gridCell"><p>4-</p></div>
+    <div class="gridCell"><p>4</p></div>
+    <div class="gridCell"><p>4+</p></div>
+  </div>
+</div>
 <div id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
 <div id="grid-container">
   <script>
+    var array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
     for(var i = 0; i < 12; i++) {
       var row = document.createElement("div");
       row.setAttribute("class", "grid-row");

@@ -39,7 +39,7 @@ if (isset($_POST['submit'])){
         exit();
     }
     else{
-        $_SESSION["access"]= false;
+        $_SESSION["access"] = false;
         header("Location: /markerApp/markerApp/frontEnd/signInPage.php");
         exit();
     }
