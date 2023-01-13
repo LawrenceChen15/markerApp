@@ -43,7 +43,7 @@
 }
 
 .grid-cell {
-  width: 80%;
+  width: 100px;
   height: 70px;
   border: 1px solid black;
 }
@@ -61,8 +61,8 @@
 }
 
 .gridCell {
-  width: 80%;
-  height: 100px;
+  width: 100px;
+  height: 70px;
   border: 1px solid black;
 }
 
@@ -79,3 +79,31 @@
   color: #ffffff;
   display: block;
 }
+
+#tasks{
+  display: inline-block;
+  padding-top: 0px;
+  margin: 0%;
+}
+
+  #dest_copy{
+    display: inline-block;
+  }
+
+  .rowss{
+    display: inline-block;
+  }
+
+  .rowss div{
+    width:120px
+  }
+
+  .gridrowss {
+    width: 700px;
+    height: 70px;
+    border: 1px solid black;
+  }
+
+  #gridContainerrow {
+    display: flex;
+  }

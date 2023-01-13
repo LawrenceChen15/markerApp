@@ -79,6 +79,8 @@ function dragend_handler(ev) {
     <div class="gridCell"><p>4+</p></div>
   </div>
 </div>
+
+<div class = "parent">
 <div id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
 <div id="grid-container">
   <script>
@@ -95,8 +97,37 @@ function dragend_handler(ev) {
     }
   </script>
 </div>
-  
 </div>
+
+
+<div id = "tasks">
+<div id="gridContainerrow">
+  <div class="rowss">
+    <div class="gridrowss"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    <div class="gridCell"><p></p></div>
+    
+  </div>
+</div>
+
+  </script>
+</script>
+
+</div>
+</div>
+
+</div>
+
+
 
  <div>
 <img id="src_copy1" src="/markerApp/markerApp/Pictures/Circle1.png" draggable="true"ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">

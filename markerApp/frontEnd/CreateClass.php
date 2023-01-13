@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CreateClass.css">
     <link rel ="stylesheet" href = "NavigationBar.css">
-
 </head>
 <h1>Create a Classroom:
 </h1>
@@ -66,7 +65,7 @@ document.getElementById('create').addEventListener('click', function(e){
 -->
 
 <div>
-<button class = "butSave" id = "saveClass" type = "submit">Save Class</button>
+<button class = "butSave" id = "create" type = "submit">Save Class</button>
 </div>
 </body>
 </form>

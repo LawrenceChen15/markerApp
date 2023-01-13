@@ -1,5 +1,3 @@
-/* Set a style for all buttons */
-
 .buttonUp {
   background-color: #3643f4;
   float: left;
@@ -64,8 +62,21 @@ label {
   outline: 0;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: #4064e9;
   text-align: center;
   cursor: pointer;
   width: 20%;
+}
+
+.seperate{
+  margin-left: 50%;
+  display: inline;
+}
+
+.homepage{
+  padding-top:60px;
+}
+
+#names{
+  padding-top: 60px;
 }
