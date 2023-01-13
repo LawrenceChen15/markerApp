@@ -39,14 +39,14 @@
       <label for = "nameLast"><b>Last Name</b></label>
       <input type = "text" placeholder = "Last Name" name = "lastName" >
 
-<div>
+<div class = "saveStudent">
 <button type = "submit">Save Student</button>
 </div>
 </form>
 <div>
-<a href="Homepage.html">
-  <button>Go to other file</button>
-</a>
+  <a href="Homepage.html">
+    <button class = "saveStudent">Go to other file</button>
+  </a>
 </div>
 </body>
 <ul>

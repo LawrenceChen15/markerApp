@@ -67,11 +67,31 @@ input[type=text], input[type=password] {
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 20%;
+  margin-bottom: 20px;
+  margin-left: 60%;
 }
 
 label {
     display: inline;
 }
 
-  
+#create {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+}
+
+#number{
+  height: 30px;
+}
+
+#submitButton{
+  padding-top: 20%;
+}

@@ -21,15 +21,12 @@
 
 </div>
 
-<div id = "div1">
-    <p class = "numStudents">Number of students: </p>
+
+<div id = "">
+    <label for = "numStudents" class = "numStudents">Number of students:</label>
+    <input id="number" type="number" value="1" min="0" step="1" max="100" />
 </div>
 
-<div id = "div2">
-    <input id="number" type="number" value="1" min="0" step="1" max="100" />
-    </label>
-    <button id="create"> Submit</button>
-</div>
 
 <!--<div>
     <p class = "nameStudents">Student names</p>
