@@ -109,6 +109,9 @@ tr:nth-child(even) {
 ?>
 
  <input type="hidden" name="studentID" value="<?php echo $studentID; ?>">
+ <input type="hidden" name="firstName" value="<?php echo $firstName; ?>">
+ <input type="hidden" name="lastName" value="<?php echo $lastName; ?>">
+
   <tr>
     <td><input type='text' placeholder='Input for Column 1' name = "assignment"></td>
     <td><input type='text' placeholder='Input for Column 2' name = "numMark"></td>

@@ -6,6 +6,7 @@
 </head>
 </html>
 <?php
+
 $mysqlConn = require __DIR__ . "/dbh.inc.php";
 
 $sqlStatement = "INSERT INTO records (studentID, assignment, numMark, percentageMark, notes, date)
@@ -18,6 +19,8 @@ if ( ! $stmt->prepare($sqlStatement)) {
 }
 
 $studentID = $_POST["studentID"];
+$firstName = $_POST["firstName"];
+$lastName = $_POST["lastName"];
 
 $stmt->bind_param("ississ",
                   $_POST["studentID"],
@@ -29,7 +32,7 @@ $stmt->bind_param("ississ",
 
                   
 if ($stmt->execute()) {
-    header("Location:/markerApp/markerApp/frontEnd/Class.php?studentID=".$studentID);
+    header("Location:/markerApp/markerApp/frontEnd/Class.php?studentID=".$studentID."&firstName=".$firstName."&lastName=".$lastName);
 } else {
     die($mysqlConn->error . " " . $mysqlConn->errno);
 }
