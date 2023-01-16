@@ -27,37 +27,6 @@
 ?>
 </div>
 
-<script>/*
-function dragstart_handler(ev) {
- console.log("dragStart");
- ev.dataTransfer.setData("text", ev.target.id);
- // Tell the browser both copy and move are possible
- ev.effectAllowed = "copyMove";
-}
-function dragover_handler(ev) {
- console.log("dragOver");
- // Change the target element's border to signify a drag over event
- // has occurred
- ev.preventDefault();
-}
-function drop_handler(ev) {
-  console.log("Drop");
-  ev.preventDefault();
-  // Get the id of drag source element (that was added to the drag data
-  // payload by the dragstart event handler)
-  var id = ev.dataTransfer.getData("text");
-  // Copy the element if the source and destination ids are both "copy"
-  if (id == "src_copy1" || "src_copy2" || "src_copy3" || "src_copy4" && ev.target.id == "dest_copy") {
-   var nodeCopy = document.getElementById(id).cloneNode(true);
-   nodeCopy.id = "newId";
-   ev.target.appendChild(nodeCopy);
-  }
-}
-function dragend_handler(ev) {
-  console.log("dragEnd");
-  ev.dataTransfer.clearData();
-}*/
-</script>
 <style>
 table {
   font-family: arial, sans-serif;
@@ -85,7 +54,7 @@ tr:nth-child(even) {
     <th>Mark</th>
     <th>Mark(%)</th>
     <th>Notes</th>
-    <th>Dates</th>
+    <th>Dates (COMING SOON)</th>
     <th>Action</th>
   </tr>
 
@@ -150,14 +119,46 @@ tr:nth-child(even) {
       <br> 
       <button type = "submit" name = "submit">submit</button></td>
   </tr>
-
-
-
   </form>
-
-  
 </table>
-<script>/*
+
+
+
+
+
+<script>
+function dragstart_handler(ev) {
+ console.log("dragStart");
+ ev.dataTransfer.setData("text", ev.target.id);
+ // Tell the browser both copy and move are possible
+ ev.effectAllowed = "copyMove";
+}
+function dragover_handler(ev) {
+ console.log("dragOver");
+ // Change the target element's border to signify a drag over event
+ // has occurred
+ ev.preventDefault();
+}
+function drop_handler(ev) {
+  console.log("Drop");
+  ev.preventDefault();
+  // Get the id of drag source element (that was added to the drag data
+  // payload by the dragstart event handler)
+  var id = ev.dataTransfer.getData("text");
+  // Copy the element if the source and destination ids are both "copy"
+  if (id == "src_copy1" || "src_copy2" || "src_copy3" || "src_copy4" && ev.target.id == "dest_copy") {
+   var nodeCopy = document.getElementById(id).cloneNode(true);
+   nodeCopy.id = "newId";
+   ev.target.appendChild(nodeCopy);
+  }
+}
+function dragend_handler(ev) {
+  console.log("dragEnd");
+  ev.dataTransfer.clearData();
+}
+</script>
+
+<script>
   
  function addRow() {
   var table = document.getElementById("myTable");
@@ -174,17 +175,15 @@ tr:nth-child(even) {
   cell4.innerHTML = "<input type='text' placeholder='Input for Column 4'>";
   cell5.innerHTML = "<input type='text' placeholder='Input for Column 5'>"; 
 }
-*/
+
 </script>
 
-<div class = "printRecord ">
+<div class = "printRecord "> (COMING SOON)
 
-</div>
-
-<!--<div class = "parent">
+<div class = "parent">
 <div id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
 <div id="grid-container">
-  <script>/*
+  <script>
     var array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
     for(var i = 0; i < 12; i++) {
       var row = document.createElement("div");
@@ -195,13 +194,15 @@ tr:nth-child(even) {
         row.appendChild(cell);
       }
       document.getElementById("grid-container").appendChild(row);
-    }*/
+    }
   </script>
 </div>
 </div>
+</div>
 
 
-<div id = "tasks">
+
+<!--<div id = "tasks">
 <div id="gridContainerrow">
   <div class="rowss">
     <div class="gridrowss"><p></p></div>
@@ -218,15 +219,15 @@ tr:nth-child(even) {
     <div class="gridCell"><p></p></div>
   </div>
 </div> 
-</div>
-</div> -->
+</div>-->
+</div> 
 
-<!--<div>
+<div>
 <img id="src_copy1" src="/markerApp/markerApp/Pictures/Circle1.png" draggable="true"ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
 <img id="src_copy2" src="/markerApp/markerApp/Pictures/Circle2.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
 <img id="src_copy3" src="/markerApp/markerApp/Pictures/Circle3.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
 <img id="src_copy4" src="/markerApp/markerApp/Pictures/Circle4.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="80" height="80">
- </div> -->
+ </div>
 
 </body>
   </body>
