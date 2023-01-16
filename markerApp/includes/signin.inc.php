@@ -1,10 +1,3 @@
-<?php
-
-session_start();
-$_SESSION["access"]= true;
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,13 +28,13 @@ if (isset($_POST['submit'])){
     $myUser = $result->fetch_assoc();
 
     if($myUser) {
+        //$_SESSION["access"] = true;
+        //echo $_SESSION["access"];
         header("Location: /markerApp/markerApp/frontEnd/Homepage.html");
-        exit();
     }
     else{
-        $_SESSION["access"] = false;
-        header("Location: /markerApp/markerApp/frontEnd/signInPage.php");
-        exit();
+        //$_SESSION["access"] = false;
+        header("Location: /markerApp/markerApp/frontEnd/signInPage.php?validUser=false");
     }
 } else {
     echo 'submit is not posted to the form';

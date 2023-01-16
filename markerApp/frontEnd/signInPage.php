@@ -1,7 +1,7 @@
 <?php
-session_start();
-$_SESSION["access"]= false;
+    $valid = true;
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +21,8 @@ $_SESSION["access"]= false;
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="pwd1" >
 
+      <input type="hidden" name="validUser" value="<?php echo $valid; ?>">
+
         <button class = "buttonIn" type = "submit" name = "submit">Login</button>
       </form>        
 
@@ -35,15 +37,14 @@ $_SESSION["access"]= false;
       </a>
 
       <?php
-       if ($_SESSION["access"] == false) {
-        echo "Password Is Incorrect";
-        session_unset();
-        session_destroy();
-       }
-        else{
-        session_abort();
-    }
+      if (isset($_GET["validUser"])) {
 
+        if ($_GET["validUser"] == "false") {
+          echo "Password is incorrect";
+        } else {
+          echo "Password is correct";
+        }
+      }
     ?>
       
     </div>

@@ -107,3 +107,26 @@
   #gridContainerrow {
     display: flex;
   }
+
+
+.printRecord{
+  font-size: 40px;
+  margin-right: 60%;
+  width: 100%;
+
+}
+
+table{
+font-family: arial, sans-serif;
+border-collapse: collapse;
+}
+
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}

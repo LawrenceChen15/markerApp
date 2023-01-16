@@ -3,30 +3,32 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
 <?php
+
 if (empty($_POST["uname"])) {
-    die("Name field is required");
+    $errorMessage = "Username is empty";
+
 }
 
 if (strlen($_POST["pwd1"]) < 8) {
-    die("Password must be at least 8 characters");
+    $errorMessage = "Password must be more than 8 characters long";
+
 }
 
 if ( ! preg_match("/[a-z]/i", $_POST["pwd1"])) {
-    die("Password must contain at least one letter");
+    $errorMessage = "Password must contain a letter";
+
 }
 
 if ( ! preg_match("/[0-9]/", $_POST["pwd1"])) {
-
-    die("Password must contain at least one number");
+    $errorMessage = "Password must contain a number";
 }
 
 if ($_POST["pwd1"] !== $_POST["pwd2"]) {
-    die("Passwords must match");
-
+    $errorMessage = "Password does not match";
 
 }
+if ($errorMessage == null) {
     $password_hash = password_hash($_POST["pwd1"], PASSWORD_DEFAULT);
 
     $mysqlConn = require __DIR__ . "/dbh.inc.php";
@@ -48,11 +50,16 @@ if ($_POST["pwd1"] !== $_POST["pwd2"]) {
 
     if ($stmt->execute()) {
         header("Location: /markerApp/markerApp/frontEnd/signInPage.php");
-        exit;
-    } else {
-        die($mysqlConn->error . " " . $mysqlConn->errno);
     }
+}
+
+else {
+    echo "we got an error";
+    header("Location: /markerApp/markerApp/frontEnd/signupPage.php?errorMessage=".$errorMessage);
+}
 ?>
+</head>
+
 
 </html>
 

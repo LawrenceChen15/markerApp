@@ -1,3 +1,7 @@
+<?php
+    $errorMessage = "Fill out all required info";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +32,17 @@
         <input type="checkbox" checked="checked" name="remember"> Remember Me
       </label>
       <span class="psw">Forgot <a href="#">Password?</a></span> 
+
+      <div>
+<?php
+     $errorMessage = $_GET['errorMessage'];
+     
+     echo "<h1>" .$errorMessage. "</h1>";
+  
+?>
+
+</div>
+
     </div>
     
     <ul>
