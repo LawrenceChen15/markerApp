@@ -35,9 +35,11 @@
 
       <div>
 <?php
-     $errorMessage = $_GET['errorMessage'];
+    if (isset($_GET["errorMessage"])) {
+      $errorMessage = $_GET['errorMessage'];
      
-     echo "<h1>" .$errorMessage. "</h1>";
+      echo "<h1>" .$errorMessage. "</h1>";
+    }
   
 ?>
 
