@@ -71,7 +71,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #474e5d;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -85,7 +85,7 @@
 }
 
 .sidenav a:hover {
-  color: #000000;
+  color: #0424df;
   cursor: pointer;
 }
 
