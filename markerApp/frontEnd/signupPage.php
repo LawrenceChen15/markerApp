@@ -38,7 +38,7 @@
     if (isset($_GET["errorMessage"])) {
       $errorMessage = $_GET['errorMessage'];
      
-      echo "<h1>" .$errorMessage. "</h1>";
+      echo "<p>" .$errorMessage. "</p>";
     }
   
 ?>
