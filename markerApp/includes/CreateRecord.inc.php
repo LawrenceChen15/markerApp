@@ -6,23 +6,27 @@
 </head>
 </html>
 <?php
-
-$mysqlConn = require __DIR__ . "/dbh.inc.php";
-
-$sqlStatement = "INSERT INTO records (studentID, assignment, numMark, percentageMark, notes, date)
+    //enter database
+    $mysqlConn = require __DIR__ . "/dbh.inc.php";
+    //insert values into specific table sections
+    $sqlStatement = "INSERT INTO records (studentID, assignment, numMark, percentageMark, notes, date)
         VALUES (?, ?, ?, ?, ?, ?)";
-        
-$stmt = $mysqlConn->stmt_init();
+    
+    //initialize the database
+    $stmt = $mysqlConn->stmt_init();
 
-if ( ! $stmt->prepare($sqlStatement)) {
-    die("SQL error: " . $mysqli->error);
-}
+    //if error send message
+    if ( ! $stmt->prepare($sqlStatement)) {
+        die("SQL error: " . $mysqli->error);
+    }
 
-$studentID = $_POST["studentID"];
-$firstName = $_POST["firstName"];
-$lastName = $_POST["lastName"];
+    //assign variable to student ID, first name and last name
+    $studentID = $_POST["studentID"];
+    $firstName = $_POST["firstName"];
+    $lastName = $_POST["lastName"];
 
-$stmt->bind_param("ississ",
+    //bind parameters to the variables
+    $stmt->bind_param("ississ",
                   $_POST["studentID"],
                   $_POST["assignment"],
                   $_POST["numMark"],
@@ -30,9 +34,12 @@ $stmt->bind_param("ississ",
                   $_POST["notes"],
                   $_POST["date"]);
 
-                  
-if ($stmt->execute()) {
-    header("Location:/markerApp/markerApp/frontEnd/Class.php?studentID=".$studentID."&firstName=".$firstName."&lastName=".$lastName);
-} else {
-    die($mysqlConn->error . " " . $mysqlConn->errno);
-}
+    //if executed go to this page   
+    if ($stmt->execute()) {
+        header("Location:/markerApp/markerApp/frontEnd/Class.php?studentID=".$studentID."&firstName=".$firstName."&lastName=".$lastName);
+    } 
+    //otherwise die
+    else {
+        die($mysqlConn->error . " " . $mysqlConn->errno);
+    }
+?>

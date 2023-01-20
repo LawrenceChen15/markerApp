@@ -8,20 +8,24 @@
 </head>
 <body>
 
+  <!--Display the side bar at the very side of the page-->
 <div class="sidenav">
 
 <div class = "classroomText"> Your Classroom
 </div>
 <?php 
+//goes into the database to get the first name, last name and student ID
     $conn = require $_SERVER['DOCUMENT_ROOT'] . "/markerApp/markerApp/includes/dbh.inc.php";
     $sqlStatement = sprintf("SELECT FirstName, LastName, ID FROM students");
     $result=$conn->query($sqlStatement);
 
-    
+//assign variable to first name, last name and student ID     
     while ($row = $result->fetch_assoc()){
       $firstName = $row['FirstName'];
       $lastName = $row['LastName'];
       $studentID = $row['ID'];
+
+    //displays the first name and last name into the side bar 
     echo "<a href = Class.php?studentID=$studentID&firstName=$firstName&lastName=$lastName>" . $firstName. " " .$lastName. " ". $studentID. "</a>";
     }
 ?>
@@ -46,7 +50,7 @@ tr:nth-child(even) {
 
 </style>
 
-
+<!--display the header of the table-->
 <body class = "body-center">
 <table id = "myTable">
   <tr>
@@ -58,36 +62,40 @@ tr:nth-child(even) {
     <th>Action</th>
   </tr>
 
+  <!-- Get the first name and last name again to display at the top of the evidence record-->
   <form action = "../includes/CreateRecord.inc.php" method = "POST">
   <?php
+  //get student ID
   if (isset($_GET["studentID"])) {
     $studentID = $_GET['studentID'];
   }
   else{
     $studentID = "";
   }
-
+  //get the first name
   if (isset($_GET["firstName"])) {
     $firstName = $_GET['firstName'];
   }
   else{
     $firstName = "";
   }
-
+  //get the last name
   if (isset($_GET["lastName"])) {
     $lastName = $_GET['lastName'];
   }
   else{
     $lastName = "";
   }
-
+  //display the first name and the last name
   echo "<h1>" . $firstName . " " . $lastName . "</h1>";
 
+  //get the assignment, number mark, percentage mark, note and date from the database
   if ($studentID != null || $studentID != "") {
     $conn = require $_SERVER['DOCUMENT_ROOT'] . "/markerApp/markerApp/includes/dbh.inc.php";
     $sqlStatement = sprintf("SELECT assignment, numMark, percentageMark, notes, date FROM records WHERE studentID = %s", $studentID);
     $result = $conn->query($sqlStatement);
 
+    //assign each value with a variable
     while ($row = $result->fetch_assoc()) {
       $assignment = $row['assignment'];
       $numMark = $row['numMark'];
@@ -95,7 +103,7 @@ tr:nth-child(even) {
       $notes = $row['notes'];
       $date = $row['date'];
 
-      //echo '<form action = "../includes/CreateRecord.inc.php" method = "GET">';
+      //display the values into the table 
       echo "<tr>";
       echo "<td>" . $assignment . "</td>";
       echo "<td>" . $numMark . "</td>";
@@ -103,15 +111,16 @@ tr:nth-child(even) {
       echo "<td>" . $notes . "</td>";
       echo "<td>" . $date . "</td>";
     }
-    //echo '<td><button type = "submit">Delete</button><td></form>';
   }
 
 ?>
 
+<!-- take the first name and last name of the students and display them -->
  <input type="hidden" name="studentID" value="<?php echo $studentID; ?>">
  <input type="hidden" name="firstName" value="<?php echo $firstName; ?>">
  <input type="hidden" name="lastName" value="<?php echo $lastName; ?>">
 
+ <!-- input boxes that the user uses to add the values that are sent to the database -->
   <tr>
     <td><input type='text' placeholder='Input for Column 1' name = "assignment"></td>
     <td><input type='text' placeholder='Input for Column 2' name = "numMark"></td>
@@ -120,6 +129,7 @@ tr:nth-child(even) {
     <td><input type='text' placeholder='Input for Column 5' name = "date"></td>
     <td>
       <br> 
+      <!--button to submit everything from the form to the database to store and organize-->
       <button type = "submit" name = "submit">submit</button></td>
   </tr>
   </form>
@@ -127,9 +137,8 @@ tr:nth-child(even) {
 
 
 
-
-
 <script>
+//Attempt to make a drag and drop feature to our evidence record (not sucessful)
 function dragstart_handler(ev) {
  console.log("dragStart");
  ev.dataTransfer.setData("text", ev.target.id);
@@ -162,7 +171,8 @@ function dragend_handler(ev) {
 </script>
 
 <script>
-  
+
+//create a table for the elements to enter into 
  function addRow() {
   var table = document.getElementById("myTable");
   var row = table.insertRow(-1);
@@ -172,6 +182,7 @@ function dragend_handler(ev) {
   var cell4 = row.insertCell(3);
   var cell5 = row.insertCell(4);
 
+  //assign the table values to the place holder values
   cell1.innerHTML = "New Cell 1";
   cell2.innerHTML = "<input type='text' placeholder='Input for Column 2'>";
   cell3.innerHTML = "<input type='text' placeholder='Input for Column 3'>";
@@ -182,27 +193,26 @@ function dragend_handler(ev) {
 </script>
 
 <div class = "printRecord "> (COMING SOON)
-
-<div class = "parent">
-<div id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-<div id="grid-container">
-  <script>
-    var array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-    for(var i = 0; i < 12; i++) {
-      var row = document.createElement("div");
-      row.setAttribute("class", "grid-row");
-      for(var j = 0; j < 12; j++) {
-        var cell = document.createElement("div");
-        cell.setAttribute("class", "grid-cell");
-        row.appendChild(cell);
-      }
-      document.getElementById("grid-container").appendChild(row);
-    }
-  </script>
-</div>
-</div>
-</div>
-
+  <div class = "parent">
+    <div id="dest_copy" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+      <div id="grid-container">
+        <script>
+          //display the table created that is able to be drag and dropped into
+          var array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+            for(var i = 0; i < 12; i++) {
+              var row = document.createElement("div");
+              row.setAttribute("class", "grid-row");
+            for(var j = 0; j < 12; j++) {
+              var cell = document.createElement("div");
+              cell.setAttribute("class", "grid-cell");
+              row.appendChild(cell);
+            }
+          document.getElementById("grid-container").appendChild(row);}
+        </script>
+      </div>
+    </div>
+  </div>
+</div> 
 
 
 <!--<div id = "tasks">
@@ -223,21 +233,19 @@ function dragend_handler(ev) {
   </div>
 </div> 
 </div>-->
-</div> 
 
+<!--display the placeholder images that can be drag and dropped-->
 <div>
-<img id="src_copy1" src="/markerApp/markerApp/Pictures/Circle1.png" draggable="true"ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
-<img id="src_copy2" src="/markerApp/markerApp/Pictures/Circle2.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
-<img id="src_copy3" src="/markerApp/markerApp/Pictures/Circle3.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
-<img id="src_copy4" src="/markerApp/markerApp/Pictures/Circle4.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="80" height="80">
- </div>
-
+  <img id="src_copy1" src="/markerApp/markerApp/Pictures/Circle1.png" draggable="true"ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
+  <img id="src_copy2" src="/markerApp/markerApp/Pictures/Circle2.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
+  <img id="src_copy3" src="/markerApp/markerApp/Pictures/Circle3.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="69" height="69">
+  <img id="src_copy4" src="/markerApp/markerApp/Pictures/Circle4.png" draggable="true" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);" width="80" height="80">
+</div>
 </body>
-  </body>
-</head>
 
+<!--display the navigation bar at the top of the page-->
 <div class = "divChange">
-<ul>
+  <ul>
     <li><a href="./HomePage.html">Home</a></li>
     <li><a href="./SettingsPage.html">Settings</a></li>
     <li><a href="./ContactPage.html">Contact</a></li>

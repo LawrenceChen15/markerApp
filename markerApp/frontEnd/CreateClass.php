@@ -7,69 +7,32 @@
     <link rel="stylesheet" href="CreateClass.css">
     <link rel ="stylesheet" href = "NavigationBar.css">
 </head>
-<h1>Create a Classroom:
-</h1>
+
+<!--header to say to create Classroom-->
+<h1>Create a Classroom:</h1>
 
 <body>
+    <!--prompt user for the name of the class-->
+    <div id = "div3"> <p class = "nameStudents">Class Name: </p> 
+        <form action = "../includes/CreateClass.inc.php" class = "className" method = "POST">
+            <label for="className"></label>
+            <input type="text" name="nameClass">
+            </div>
 
-<div id = "div3"> <p class = "nameStudents">Class Name: </p> 
+            <!--asks for number of students-->
+            <div id = "">
+                <label for = "numStudents" class = "numStudents">Number of students:</label>
+                <input id="number" type="number" value="1" min="0" step="1" max="100" />
+            </div>
 
-<form action = "../includes/CreateClass.inc.php" class = "className" method = "POST">
-      <label for="className"></label>
-      <input type="text" name="nameClass">
-
-</div>
-
-
-<div id = "">
-    <label for = "numStudents" class = "numStudents">Number of students:</label>
-    <input id="number" type="number" value="1" min="0" step="1" max="100" />
-</div>
-
-
-<!--<div>
-    <p class = "nameStudents">Student names</p>
-
-    <div>
-  <script>
-function appendInputs(num){
-    var target = document.getElementById('divSelections'),
-        form = document.createElement('form'),
-        input = document.createElement('input'),
-        tmp;
-    num = typeof num == 'undefined' ?  parseInt(document.getElementById('number').value, 10) : num;
-    for (var i = 0; i < num*2; i++){
-        tmp = input.cloneNode();
-        tmp.id = 'input_' + (i+1);
-        tmp.name = '';
-        tmp.type = 'text';
-        tmp.placeholder = tmp.id;
-        form.appendChild(tmp);
-    }
-    target.appendChild(form);
-}
-
-document.getElementById('create').addEventListener('click', function(e){
-    e.preventDefault();
-    appendInputs();
-});
-      
-  </script>
-
-    </div>
-
-</div>
-
-<div id="divSelections"></div>
-
--->
-
-<div>
-<button class = "butSave" id = "create" type = "submit">Save Class</button>
-</div>
+            <!--button to submit the form-->
+            <div>
+                <button class = "butSave" id = "create" type = "submit">Save Class</button>
+            </div>
+        </form>
 </body>
-</form>
 
+<!--display the navigation bar at the top of the page-->
 <ul>
 <li><a href="./HomePage.html">Home</a></li>
   <li><a href="./SettingsPage.html">Settings</a></li>
