@@ -137,6 +137,7 @@
   <li><a href="./SettingsPage.html">Settings</a></li>
   <li><a href="./ContactPage.html">Contact</a></li>
   <li><a href="./AboutPage.html">About</a></li>
+  <li><a href="./signInPage.php">Login</a></li>
     </ul>
 </html>
 
